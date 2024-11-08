@@ -1,0 +1,45 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.main-container{
+    width: 75%;
+    height: 75%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+.carousel-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8fr 1fr;
+}
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: black solid;
+}
+.navdot-section-container{
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%; 
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+}
+.navdot-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-visible{
+    background-color: #04AA6D;
+}
