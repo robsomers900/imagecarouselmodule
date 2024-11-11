@@ -26,9 +26,10 @@ body{
     justify-content: center;
     padding-left: 20%;
     padding-right: 20%; 
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-evenly;
+    /* grid-template-rows: 1fr; */
+    /* grid-template-columns: repeat(3, 1fr); */
 }
 .navdot-container{
     display: flex;
