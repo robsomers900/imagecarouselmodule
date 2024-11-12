@@ -85,6 +85,13 @@ function initCarousel(carouselObject){
         carouselImage.src = carouselObject[currentImage]["image"]
         carouselImage.alt = carouselObject[currentImage]["alt"]
     })
+    //timer variable - continually counts to 5 and if reaches 5 - executes right arrow click 
+    //every time right arrow click is executed, timer is reset
+    // let autoScrollTime = 3000
+    // setInterval(rightArrow.click(), autoScrollTime)
+    let timer = setInterval(() => {
+        rightArrow.click()
+    }, 5000)
 }
 
 export{Carousel, initCarousel}
