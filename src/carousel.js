@@ -10,7 +10,7 @@ function initCarousel(carouselObject){
     const mainBody = document.querySelector(".main-container")
     const carouselHTML = 
         `<div class="arrow-container">
-            <button class="image-carousel-arrow-button">
+            <button class="image-carousel-left-arrow-button">
                 <
             </button>
         </div>
@@ -25,7 +25,7 @@ function initCarousel(carouselObject){
             </div>
         </div>
         <div class="arrow-container">
-            <button class="image-carousel-arrow-button">
+            <button class="image-carousel-right-arrow-button">
                 >
             </button>
         </div>`
@@ -39,6 +39,7 @@ function initCarousel(carouselObject){
         navdotSectionContainer.appendChild(navdot)
         i ++;   
     }
+    let currentImage = 0
     const navdots = document.querySelectorAll(".navdot")
     navdots.forEach((navdot, index) =>{
             navdot.addEventListener("click",() =>{
@@ -48,9 +49,42 @@ function initCarousel(carouselObject){
                 const carouselImage = document.querySelector(".carousel-image")
                 carouselImage.src = carouselObject[index]["image"]
                 carouselImage.alt = carouselObject[index]["alt"]
+                currentImage = index
             })
         }
     )
+    const leftArrow = document.querySelector(".image-carousel-left-arrow-button")
+    const rightArrow = document.querySelector(".image-carousel-right-arrow-button")
+    leftArrow.addEventListener("click", () => {
+        if (currentImage > 0){
+            currentImage --
+        }
+        else{
+            currentImage = carouselObject.length - 1
+        }
+        const highlightedNavdot = document.querySelector(".image-visible")
+        highlightedNavdot.classList.remove("image-visible")
+        const navdot = navdots[currentImage]
+        navdot.classList.add("image-visible")
+        const carouselImage = document.querySelector(".carousel-image")
+        carouselImage.src = carouselObject[currentImage]["image"]
+        carouselImage.alt = carouselObject[currentImage]["alt"]
+    })
+    rightArrow.addEventListener("click", () => {
+        if (currentImage < carouselObject.length - 1){
+            currentImage ++
+        }
+        else{
+            currentImage = 0
+        }
+        const highlightedNavdot = document.querySelector(".image-visible")
+        highlightedNavdot.classList.remove("image-visible")
+        const navdot = navdots[currentImage]
+        navdot.classList.add("image-visible")
+        const carouselImage = document.querySelector(".carousel-image")
+        carouselImage.src = carouselObject[currentImage]["image"]
+        carouselImage.alt = carouselObject[currentImage]["alt"]
+    })
 }
 
 export{Carousel, initCarousel}
