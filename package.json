@@ -1,4 +1,11 @@
 {
+  "name": "image-carousel-module-rs2024",  
+  "version": "1.0.0",               
+  "description": "An image carousel module",
+  "main": "carousel.js",  
+  "scripts": {
+    "build": "webpack"              
+  },
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
